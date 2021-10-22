@@ -1,0 +1,28 @@
+{
+  "name": "hackathon-blockchain",
+  "version": "1.0.0",
+  "description": "## Info For the smart-contract development we are using [Openzeppelin](https://docs.openzeppelin.com/openzeppelin/) and [Trufflesuite]( https://www.trufflesuite.com/). Truffle allows us to develop, test and deploy smart contracts easily, and Openzeppelin gives us access to audited contracts for the main token standard. We will use the ERC20 standard (for AmanaCFA) and the ERC721 (for NFT management).",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@openzeppelin/contracts": "^2.5.1",
+    "@openzeppelin/truffle-upgrades": "^1.9.1",
+    "@truffle/hdwallet-provider": "^1.5.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ouabi54/hackathon-blockchain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ouabi54/hackathon-blockchain/issues"
+  },
+  "homepage": "https://github.com/Ouabi54/hackathon-blockchain#readme"
+}
