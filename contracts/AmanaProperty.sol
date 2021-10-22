@@ -22,11 +22,9 @@ contract AmanaProperty is ERC721Full {
 
     function allocatePorperty(address propertyOwner, string memory tokenURI) public onlyOwner returns (uint256) {
         _tokenIds.increment();
-
         uint256 newItemId = _tokenIds.current();
         _mint(propertyOwner, newItemId);
         _setTokenURI(newItemId, tokenURI);
-
         return newItemId;
     }
 }
