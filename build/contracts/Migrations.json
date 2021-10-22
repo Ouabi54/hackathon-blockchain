@@ -958,12 +958,13 @@
     "44787": {
       "events": {},
       "links": {},
-      "address": "0x27E6323b048fbEa3c27c99F7e55497D73C0f372f",
-      "transactionHash": "0x0aff8da19dc913039b3be49c7d586495e28cc942f8b2d7a99f69434e6505d971"
+      "address": "0x0A507f45728DeC2E109b2F99f992bC0a1261B824",
+      "transactionHash": "0xfbeedc64628826331850bf259d4e6d233b357271a42366f783e95ca4801f7b57"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-10-22T17:38:31.416Z",
+  "updatedAt": "2021-10-22T18:06:47.192Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {}
   },
