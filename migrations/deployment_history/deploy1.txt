@@ -1,0 +1,93 @@
+2_deploy_contracts.js
+=====================
+
+   Deploying 'AmanaProxy'
+   ----------------------
+   > transaction hash:    0xd95c6d8b9dfc04f42751f1fa533cb86f27f0da242456104caff2f666c2f32295
+   > Blocks: 1            Seconds: 5
+   > contract address:    0xcA5C19820EFBEF146735B06cB87750FB2eF57b2f
+   > block number:        7979657
+   > block timestamp:     1635253886
+   > account:             0x8FFD6dFBc123D16486360380Ca2ccf3e262FBE49
+   > balance:             4.999378325
+   > gas used:            832718 (0xcb4ce)
+   > gas price:           0.5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000416359 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 7979659)
+   > confirmation number: 2 (block: 7979660)
+
+   Deploying 'AmanaCFA'
+   --------------------
+   > transaction hash:    0x92c398cbdafd248bf91fdb92f957c5e40cc685881e594c8bc849dc5682a013be
+   > Blocks: 2            Seconds: 9
+   > contract address:    0xF4e579ea781EC987142f7ab5C8f80fe3A840d7C9
+   > block number:        7979663
+   > block timestamp:     1635253916
+   > account:             0x8FFD6dFBc123D16486360380Ca2ccf3e262FBE49
+   > balance:             4.998567463
+   > gas used:            1621724 (0x18bedc)
+   > gas price:           0.5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000810862 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 7979665)
+   > confirmation number: 2 (block: 7979666)
+
+   Deploying 'AmanaProperty'
+   -------------------------
+   > transaction hash:    0x72ce98eeab92eb5a321d9b2d397bb21b75ec3855fdc8c30d519fb818566a4c53
+   > Blocks: 2            Seconds: 10
+   > contract address:    0x8eD5F3Afdb1D53f811F42834a300A2606364cB65
+   > block number:        7979669
+   > block timestamp:     1635253946
+   > account:             0x8FFD6dFBc123D16486360380Ca2ccf3e262FBE49
+   > balance:             4.99694368
+   > gas used:            3247566 (0x318dce)
+   > gas price:           0.5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.001623783 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 7979671)
+   > confirmation number: 2 (block: 7979672)
+
+   Deploying 'AmanaMarketplace'
+   ----------------------------
+   > transaction hash:    0x6cd429ec34e2fd0a737ebb823db63bccd3373707958c89ff22732d9c77c1f94b
+   > Blocks: 1            Seconds: 9
+   > contract address:    0x10efFe234d63755C259cF4C7BcdfF5B78C526E36
+   > block number:        7979675
+   > block timestamp:     1635253976
+   > account:             0x8FFD6dFBc123D16486360380Ca2ccf3e262FBE49
+   > balance:             4.996263243
+   > gas used:            1360874 (0x14c3ea)
+   > gas price:           0.5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000680437 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 7979677)
+   > confirmation number: 2 (block: 7979678)
+---------------------------------
+AmanaCFA ->  0xF4e579ea781EC987142f7ab5C8f80fe3A840d7C9
+AmanaProperty ->  0x8eD5F3Afdb1D53f811F42834a300A2606364cB65
+AmanaMarketplace ->  0x10efFe234d63755C259cF4C7BcdfF5B78C526E36
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:         0.003531441 ETH
+
+
+Summary
+=======
+> Total deployments:   5
+> Final cost:          0.0036132285 ETH

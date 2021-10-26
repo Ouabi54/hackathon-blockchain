@@ -3,6 +3,8 @@ pragma solidity ^0.5.0;
 import "@openzeppelin/contracts/ownership/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
+import "./AmanaAuthorizable.sol";
+
 
 
 /**
@@ -13,7 +15,7 @@ import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
  * implemented. The item tokenization is responsibility of the ERC721 contract
  * which should encode any item details.
  */
-contract AmanaMarketplace {
+contract AmanaMarketplace is AmanaAuthorizable {
     event TradeStatusChange(uint256 ad, bytes32 status);
 
     IERC20 currencyToken;
