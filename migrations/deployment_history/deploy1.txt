@@ -91,3 +91,34 @@ Summary
 =======
 > Total deployments:   5
 > Final cost:          0.0036132285 ETH
+
+Truffle Develop started at http://127.0.0.1:9545/
+
+Accounts:
+(0) 0x8a4754641cd21b4bef0cf233c8e6e79ba2052723
+(1) 0x6443a8ed708c0e47b443d4bba045932cc3561834
+(2) 0xa4d18d734b206182ba6a22da701ba4b144b11896
+(3) 0xe31a3a6485ea9367120dd62e1b5828b04dfbe4d7
+(4) 0x3408281c5deebd67d603e8bfc16130dea9a7a30b
+(5) 0x01ed09c224e4b3ad06228f710d7665b047799b10
+(6) 0xdb00b86b52f9b7d470b06846f617fd583bdf5942
+(7) 0xfe8addbeb4fe40a23bd720fc8e0b99c3df75b844
+(8) 0x058a8b32a8a1c23c509866ade869fcd96b8fcd4d
+(9) 0x140a034a908266f573e96be04c772cfa0f86ec3c
+
+Private Keys:
+(0) c868a0f3428cc9796f6d65a8d6351d94dcab4665795d68568d9c4ad609a830ef
+(1) 090b8c85c130c65879577bb4db67e1f231d8e47d6d4cd69020b734ec524d278f
+(2) 262cf6d8b7409b0a1fee9b785e3c667395669c067ad0624569b8f073bc889bd6
+(3) 818bb82b9edae83deeba9e3523336a391f07fdb6ce7150faa7a3475e5e9b7eb9
+(4) f9c9cc99823f3175cbea728ab5d1d57af9431f203081b4471c605254be252665
+(5) e03f66ff9d5a3983699b14ff40e63f7330a1ad3a196a9fbc4fd967cadad5466f
+(6) 6d1c87d9609199a02713509a59a2ba7496ba4dd5b4b783586beb2796cfb65196
+(7) b304637ef89ddf435d8e3b6f52325ae010e47c1f2464b7aad1d2eaaa83887a4a
+(8) c29fb2d6ca923bb64bc70ac3b0ed5c8e874101b8961f510a812a743bd8b1e4bf
+(9) 847fb306776360e0e9c738cc5be9283755df24fe3584f5c85bffad7a2b9145c5
+
+Mnemonic: oak identify fit bamboo artwork hotel beauty coyote zebra furnace daughter airport
+
+⚠️  Important ⚠️  : This mnemonic was created for you by Truffle. It is not secure.
+Ensure you do not use it on production blockchains, or else you risk losing funds.
