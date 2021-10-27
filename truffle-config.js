@@ -13,7 +13,8 @@ module.exports = {
         provider: function() {
           //return new HDWalletProvider(process.env.MNEMONIC, "https://alfajores-forno.celo-testnet.org")
           //return new HDWalletProvider(mnemonic, "https://alfajores-forno.celo-testnet.org")
-          return new HDWalletProvider("enter celo priv key ( not mnemonic ) to use truffle console", "https://alfajores-forno.celo-testnet.org")
+          //return new HDWalletProvider("enter celo priv key ( not mnemonic ) to use truffle console", "https://alfajores-forno.celo-testnet.org")
+          return new HDWalletProvider("f6d9d5a76da685213f7d3e70bb2f2cc904d532cfe61212467bbb0982fe17267d", "https://alfajores-forno.celo-testnet.org")
         },
         //from : "0x3FCfaC012476dD244B5C9D31CcFD83a58786ebed",
         network_id: 44787,       // Alfajores's id

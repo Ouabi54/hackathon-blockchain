@@ -106,4 +106,13 @@ contract AmanaMarketplace is AmanaAuthorizable {
         trades[_trade].status = "Cancelled";
         emit TradeStatusChange(_trade, "Cancelled");
     }
+
+
+    function lateInitializee (address _currencyTokenAddress, address _itemTokenAddress)
+        public
+    {
+        currencyToken = IERC20(_currencyTokenAddress);
+        itemToken = IERC721(_itemTokenAddress);
+        tradeCounter = 0;
+    }
 }
