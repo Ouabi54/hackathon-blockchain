@@ -23,6 +23,7 @@ contract AmanaMarketplace is AmanaAuthorizable {
     IERC721 itemToken;
 
     struct Trade {
+        address executer;
         address poster;
         uint256 item;
         uint256 price;
@@ -30,6 +31,8 @@ contract AmanaMarketplace is AmanaAuthorizable {
         bytes32 tradeType; // Offer, Bid
         mapping(uint256 => Bid) bids;
         uint256 bidCounter;
+        uint256 openTime;
+        uint256 closeTime;
     }
 
     struct Bid {
@@ -42,6 +45,7 @@ contract AmanaMarketplace is AmanaAuthorizable {
 
     mapping(uint256 => Trade) public trades;
     mapping(uint256 => Bid) public bids;
+    Trade[] public history;
 
     uint256 tradeCounter;
     uint256 bidCounter;
@@ -55,9 +59,29 @@ contract AmanaMarketplace is AmanaAuthorizable {
         bidCounter = 0;
     }
 
+
+    function getHistoryCount() public view returns(uint count) {
+        return history.length;
+    }
+
+    function getHistory(uint256 _id) 
+        public 
+        view 
+        returns (address, address, uint256, uint256, bytes32, uint256, uint256) {
+        Trade memory trade = history[_id];
+        return (trade.poster, trade.executer, trade.item, trade.price, trade.status, trade.openTime, trade.closeTime);
+    }
+
+    function getTradeCounter()
+        public
+        view
+        returns(uint256)
+    {
+        return tradeCounter;
+    }
+
     function getAllTradeBids(uint256 _trade) public view returns (Bid[] memory){
     
-
         Bid[] memory bidList = new Bid[](trades[_trade].bidCounter);
         for (uint i = 0; i < trades[_trade].bidCounter; i++) {
             bidList[i] = trades[_trade].bids[i];
@@ -126,15 +150,20 @@ contract AmanaMarketplace is AmanaAuthorizable {
         public
     {
         itemToken.transferFrom(msg.sender, address(this), _item);
-        trades[tradeCounter] = Trade({
+        Trade memory trade = Trade({
             poster: msg.sender,
+            executer: 0x0000000000000000000000000000000000000000,
             item: _item,
             price: _price,
             status: "Open",
             tradeType: _tradeType,
-            bidCounter: 0
+            bidCounter: 0,
+            openTime: now,
+            closeTime: now
         });
+        trades[tradeCounter] = trade;
         tradeCounter += 1;
+        history.push(trade);
         emit TradeStatusChange(tradeCounter - 1, "Open");
     }
 
@@ -153,6 +182,8 @@ contract AmanaMarketplace is AmanaAuthorizable {
         currencyToken.transferFrom(msg.sender, trade.poster, trade.price);
         itemToken.transferFrom(address(this), msg.sender, trade.item);
         trades[_trade].status = "Executed";
+        trades[_trade].executer = msg.sender;
+        history.push(trades[_trade]);
         emit TradeStatusChange(_trade, "Executed");
     }
 
@@ -196,6 +227,7 @@ contract AmanaMarketplace is AmanaAuthorizable {
         require(trade.status == "Open", "Trade is not Open.");
         itemToken.transferFrom(address(this), trade.poster, trade.item);
         trades[_trade].status = "Cancelled";
+        history.push(trades[_trade]);
         emit TradeStatusChange(_trade, "Cancelled");
     }
 
