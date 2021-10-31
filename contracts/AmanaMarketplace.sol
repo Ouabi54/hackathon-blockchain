@@ -1,5 +1,5 @@
 pragma solidity ^0.5.0;
-
+pragma experimental ABIEncoderV2;
 import "@openzeppelin/contracts/ownership/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
@@ -55,6 +55,16 @@ contract AmanaMarketplace is AmanaAuthorizable {
         bidCounter = 0;
     }
 
+    function getAllTradeBids(uint256 _trade) public view returns (Bid[] memory){
+    
+
+        Bid[] memory bidList = new Bid[](trades[_trade].bidCounter);
+        for (uint i = 0; i < trades[_trade].bidCounter; i++) {
+            bidList[i] = trades[_trade].bids[i];
+        }
+        return bidList;
+    }
+
     /**
      * @dev Returns the details for a trade.
      * @param _trade The id for the trade.
@@ -62,10 +72,11 @@ contract AmanaMarketplace is AmanaAuthorizable {
     function getTrade(uint256 _trade)
         public
         view
-        returns(address, uint256, uint256, bytes32, bytes32, mapping(uint256 => Bid))
+        returns(address, uint256, uint256, bytes32, bytes32, Bid[] memory)
     {
         Trade memory trade = trades[_trade];
-        return (trade.poster, trade.item, trade.price, trade.status, trade.tradeType, trade.bids);
+        Bid[] memory bidList = getAllTradeBids(_trade);
+        return (trade.poster, trade.item, trade.price, trade.status, trade.tradeType, bidList);
     }
 
     /**
@@ -79,7 +90,7 @@ contract AmanaMarketplace is AmanaAuthorizable {
         returns(address, uint256, uint256, bytes32, address, uint256, uint256, bytes32)
     {
         Trade memory trade = trades[_trade];
-        Bid memory bid = trade.bids[_bid];
+        Bid memory bid = trades[_trade].bids[_bid];
         return (trade.poster, trade.item, trade.price, trade.status, bid.bidder, bid.item, bid.price, bid.status);
     }
 
@@ -87,17 +98,19 @@ contract AmanaMarketplace is AmanaAuthorizable {
      * @dev Opens a new bid. Puts _item in escrow.
      * @param _item The id for the item to bid on.
      * @param _price The amount of currency for which to bid the item.
+     * @param _visibility The visibility for which to bid the item.
      */
-    function openBid(uint256 _item, uint256 _price)
+    function openBid(uint256 _item, uint256 _price, bytes32 _visibility)
         public
     {
         Trade memory trade = trades[tradeCounter-1];
         require(trade.tradeType == "Bid", "Trade must be bid type to open a bid.");
-        trade.bids[trade.bidCounter] = Bid({
-            poster: msg.sender,
+        trades[tradeCounter].bids[trade.bidCounter] = Bid({
+            bidder: msg.sender,
             item: _item,
             price: _price,
-            status: "Open"
+            status: "Open",
+            visibility : _visibility
         });
         trade.bidCounter += 1;
         emit BidStatusChange(trade.bidCounter - 1, "Open");
@@ -118,7 +131,7 @@ contract AmanaMarketplace is AmanaAuthorizable {
             item: _item,
             price: _price,
             status: "Open",
-            tradeType: _tradeType
+            tradeType: _tradeType,
             bidCounter: 0
         });
         tradeCounter += 1;
@@ -159,7 +172,7 @@ contract AmanaMarketplace is AmanaAuthorizable {
         );
         require(trade.status == "Open", "Trade is not Open.");
         require(trade.tradeType == "Bid", "Trade is not an bid type .");
-        Bid memory bid = trade.bids[_bid];
+        Bid memory bid = trades[_trade].bids[_bid];
         currencyToken.transferFrom(msg.sender, bid.bidder, bid.price);
         itemToken.transferFrom(address(this), bid.bidder, bid.item);
         trades[_trade].status = "Executed";
@@ -188,13 +201,14 @@ contract AmanaMarketplace is AmanaAuthorizable {
 
     /**
      * @dev Cancels a trade by the poster.
-     * @param _trade The trade to be cancelled.
+     * @param _trade The trade that contain the bid to be cancelled.
+     * @param _bid The bid to be cancelled.
      */
-    function cancelBid(uint256 _bid)
+    function cancelBid(uint256 _trade, uint256 _bid)
         public
     {
         Trade memory trade = trades[_trade];
-        Bid memory bid = trade.bids[_bid];
+        Bid memory bid = trades[_trade].bids[_bid];
         require(
             msg.sender == bid.bidder,
             "Bid can be cancelled only by poster."
@@ -202,8 +216,8 @@ contract AmanaMarketplace is AmanaAuthorizable {
         require(trade.status == "Open", "Trade is not Open.");
         require(trade.tradeType == "Bid", "Trade is not bid type.");
         itemToken.transferFrom(address(this), bid.bidder, bid.item);
-        trades[_trade].status = "Cancelled";
-        emit TradeStatusChange(_trade, "Cancelled");
+        trades[_trade].bids[_bid].status = "Cancelled";
+        emit BidStatusChange(_trade, "Cancelled");
     }
 
 
