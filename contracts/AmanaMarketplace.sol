@@ -183,6 +183,7 @@ contract AmanaMarketplace is AmanaAuthorizable {
         itemToken.transferFrom(address(this), msg.sender, trade.item);
         trades[_trade].status = "Executed";
         trades[_trade].executer = msg.sender;
+        trades[_trade].closeTime = now;
         history.push(trades[_trade]);
         emit TradeStatusChange(_trade, "Executed");
     }
@@ -207,6 +208,7 @@ contract AmanaMarketplace is AmanaAuthorizable {
         currencyToken.transferFrom(msg.sender, bid.bidder, bid.price);
         itemToken.transferFrom(address(this), bid.bidder, bid.item);
         trades[_trade].status = "Executed";
+        trades[_trade].closeTime = now;
         trades[_trade].bids[_bid].status = "Executed";
         emit TradeStatusChange(_trade, "Executed");
         emit BidStatusChange(_bid, "Executed");
@@ -226,6 +228,7 @@ contract AmanaMarketplace is AmanaAuthorizable {
         );
         require(trade.status == "Open", "Trade is not Open.");
         itemToken.transferFrom(address(this), trade.poster, trade.item);
+        trades[_trade].status = "Cancelled";
         trades[_trade].status = "Cancelled";
         history.push(trades[_trade]);
         emit TradeStatusChange(_trade, "Cancelled");

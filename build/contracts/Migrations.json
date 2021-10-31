@@ -958,12 +958,12 @@
     "1377": {
       "events": {},
       "links": {},
-      "address": "0x4A916A3b2aA4De013cdBdeB0E09f365042533aE8",
-      "transactionHash": "0x1a34bb442ba0e2cf79c515228d06687103cef3f2aaa7cb32b220d14fd176a8dc"
+      "address": "0x5691d6A7fedAf9a84B0138560826b3DfB0C9fF6f",
+      "transactionHash": "0xd787709d912860190c123a79ecc0f9ed97b3e163607f70e7dbe987480e5fcd0a"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-10-31T19:13:46.828Z",
+  "updatedAt": "2021-10-31T19:31:56.551Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
