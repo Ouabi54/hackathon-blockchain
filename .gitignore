@@ -20,7 +20,9 @@ chrome-profiler-events*.json
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
+.env
 
+secrets.json
 
 # System Files
 .DS_Store

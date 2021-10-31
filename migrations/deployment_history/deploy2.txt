@@ -1,0 +1,91 @@
+
+
+Starting migrations...
+======================
+> Network name:    'alfajores'
+> Network id:      44787
+> Block gas limit: 0 (0x0)
+
+
+1_initial_migration.js
+======================
+
+   Replacing 'Migrations'
+   ----------------------
+   > transaction hash:    0x6e309ca7108961ba5797fce1be61f85c560f0c8b8f2f91184281bd1b6dfbb221
+   > Blocks: 2            Seconds: 9
+   > contract address:    0x2E461E0b81B4b10b3e3A32F45F590e41cD1c9AD0
+   > block number:        7987205
+   > block timestamp:     1635291626
+   > account:             0x3FCfaC012476dD244B5C9D31CcFD83a58786ebed
+   > balance:             4.999104081
+   > gas used:            163575 (0x27ef7)
+   > gas price:           0.5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0000817875 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 7987206)
+   > confirmation number: 2 (block: 7987207)
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:        0.0000817875 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'AmanaPropertyProxy'
+   ------------------------------
+   > transaction hash:    0xe29cc44fb4166bebb5ffd8174bc78db23d9ef738d2d44a6ae4e1b18dd52b8b86
+   > Blocks: 1            Seconds: 5
+   > contract address:    0x2D48F20E01dDc91c6aE7f04F3aE47578197371b6
+   > block number:        7987211
+   > block timestamp:     1635291656
+   > account:             0x3FCfaC012476dD244B5C9D31CcFD83a58786ebed
+   > balance:             4.9986189945
+   > gas used:            928432 (0xe2ab0)
+   > gas price:           0.5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000464216 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 7987212)
+   > confirmation number: 2 (block: 7987213)
+
+   Deploying 'AmanaMarketplaceProxy'
+   ---------------------------------
+   > transaction hash:    0xa4275a35a4ef8723abfb9253c03f482359ebd10d2356a337e3f1be13bbfc5fbc
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x74198Cb8B22AD777BcAeB0E61d13c62C89ce32bC
+   > block number:        7987215
+   > block timestamp:     1635291676
+   > account:             0x3FCfaC012476dD244B5C9D31CcFD83a58786ebed
+   > balance:             4.9981547845
+   > gas used:            928420 (0xe2aa4)
+   > gas price:           0.5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00046421 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 7987216)
+   > confirmation number: 2 (block: 7987217)
+---------------------------------
+AmanaPropertyProxy ->  0x2D48F20E01dDc91c6aE7f04F3aE47578197371b6
+AmanaMarketplaceProxy ->  0x74198Cb8B22AD777BcAeB0E61d13c62C89ce32bC
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:         0.000928426 ETH
+
+
+Summary
+=======
+> Total deployments:   3
+> Final cost:          0.0010102135 ETH

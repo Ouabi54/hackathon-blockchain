@@ -1,0 +1,124 @@
+2_deploy_contracts.js
+=====================
+
+   Deploying 'AmanaProxy'
+   ----------------------
+   > transaction hash:    0xd95c6d8b9dfc04f42751f1fa533cb86f27f0da242456104caff2f666c2f32295
+   > Blocks: 1            Seconds: 5
+   > contract address:    0xcA5C19820EFBEF146735B06cB87750FB2eF57b2f
+   > block number:        7979657
+   > block timestamp:     1635253886
+   > account:             0x8FFD6dFBc123D16486360380Ca2ccf3e262FBE49
+   > balance:             4.999378325
+   > gas used:            832718 (0xcb4ce)
+   > gas price:           0.5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000416359 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 7979659)
+   > confirmation number: 2 (block: 7979660)
+
+   Deploying 'AmanaCFA'
+   --------------------
+   > transaction hash:    0x92c398cbdafd248bf91fdb92f957c5e40cc685881e594c8bc849dc5682a013be
+   > Blocks: 2            Seconds: 9
+   > contract address:    0xF4e579ea781EC987142f7ab5C8f80fe3A840d7C9
+   > block number:        7979663
+   > block timestamp:     1635253916
+   > account:             0x8FFD6dFBc123D16486360380Ca2ccf3e262FBE49
+   > balance:             4.998567463
+   > gas used:            1621724 (0x18bedc)
+   > gas price:           0.5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000810862 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 7979665)
+   > confirmation number: 2 (block: 7979666)
+
+   Deploying 'AmanaProperty'
+   -------------------------
+   > transaction hash:    0x72ce98eeab92eb5a321d9b2d397bb21b75ec3855fdc8c30d519fb818566a4c53
+   > Blocks: 2            Seconds: 10
+   > contract address:    0x8eD5F3Afdb1D53f811F42834a300A2606364cB65
+   > block number:        7979669
+   > block timestamp:     1635253946
+   > account:             0x8FFD6dFBc123D16486360380Ca2ccf3e262FBE49
+   > balance:             4.99694368
+   > gas used:            3247566 (0x318dce)
+   > gas price:           0.5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.001623783 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 7979671)
+   > confirmation number: 2 (block: 7979672)
+
+   Deploying 'AmanaMarketplace'
+   ----------------------------
+   > transaction hash:    0x6cd429ec34e2fd0a737ebb823db63bccd3373707958c89ff22732d9c77c1f94b
+   > Blocks: 1            Seconds: 9
+   > contract address:    0x10efFe234d63755C259cF4C7BcdfF5B78C526E36
+   > block number:        7979675
+   > block timestamp:     1635253976
+   > account:             0x8FFD6dFBc123D16486360380Ca2ccf3e262FBE49
+   > balance:             4.996263243
+   > gas used:            1360874 (0x14c3ea)
+   > gas price:           0.5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000680437 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 7979677)
+   > confirmation number: 2 (block: 7979678)
+---------------------------------
+AmanaCFA ->  0xF4e579ea781EC987142f7ab5C8f80fe3A840d7C9
+AmanaProperty ->  0x8eD5F3Afdb1D53f811F42834a300A2606364cB65
+AmanaMarketplace ->  0x10efFe234d63755C259cF4C7BcdfF5B78C526E36
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:         0.003531441 ETH
+
+
+Summary
+=======
+> Total deployments:   5
+> Final cost:          0.0036132285 ETH
+
+Truffle Develop started at http://127.0.0.1:9545/
+
+Accounts:
+(0) 0x8a4754641cd21b4bef0cf233c8e6e79ba2052723
+(1) 0x6443a8ed708c0e47b443d4bba045932cc3561834
+(2) 0xa4d18d734b206182ba6a22da701ba4b144b11896
+(3) 0xe31a3a6485ea9367120dd62e1b5828b04dfbe4d7
+(4) 0x3408281c5deebd67d603e8bfc16130dea9a7a30b
+(5) 0x01ed09c224e4b3ad06228f710d7665b047799b10
+(6) 0xdb00b86b52f9b7d470b06846f617fd583bdf5942
+(7) 0xfe8addbeb4fe40a23bd720fc8e0b99c3df75b844
+(8) 0x058a8b32a8a1c23c509866ade869fcd96b8fcd4d
+(9) 0x140a034a908266f573e96be04c772cfa0f86ec3c
+
+Private Keys:
+(0) c868a0f3428cc9796f6d65a8d6351d94dcab4665795d68568d9c4ad609a830ef
+(1) 090b8c85c130c65879577bb4db67e1f231d8e47d6d4cd69020b734ec524d278f
+(2) 262cf6d8b7409b0a1fee9b785e3c667395669c067ad0624569b8f073bc889bd6
+(3) 818bb82b9edae83deeba9e3523336a391f07fdb6ce7150faa7a3475e5e9b7eb9
+(4) f9c9cc99823f3175cbea728ab5d1d57af9431f203081b4471c605254be252665
+(5) e03f66ff9d5a3983699b14ff40e63f7330a1ad3a196a9fbc4fd967cadad5466f
+(6) 6d1c87d9609199a02713509a59a2ba7496ba4dd5b4b783586beb2796cfb65196
+(7) b304637ef89ddf435d8e3b6f52325ae010e47c1f2464b7aad1d2eaaa83887a4a
+(8) c29fb2d6ca923bb64bc70ac3b0ed5c8e874101b8961f510a812a743bd8b1e4bf
+(9) 847fb306776360e0e9c738cc5be9283755df24fe3584f5c85bffad7a2b9145c5
+
+Mnemonic: oak identify fit bamboo artwork hotel beauty coyote zebra furnace daughter airport
+
+⚠️  Important ⚠️  : This mnemonic was created for you by Truffle. It is not secure.
+Ensure you do not use it on production blockchains, or else you risk losing funds.
